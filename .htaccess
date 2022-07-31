@@ -37,6 +37,6 @@ RewriteRule ^(.*)$ https://www.microsoft.com/en-us/download/internet-explorer.as
 #RewriteCond %{HTTPS} off
 #RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# RewriteCond %{HTTP_HOST} !^iamvs\.com [NC,OR]
-# RewriteCond %{HTTP:X-Forwarded-Proto} !https
-# RewriteRule ^(.*)$ https://iamvs.com/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} !^iamvs\.com [NC,OR]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://iamvs.com/$1 [R=301,L]
